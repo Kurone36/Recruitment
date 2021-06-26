@@ -1,5 +1,6 @@
 <template>
-    <div class="PlanetsList">
+    <div id="loading" v-if="isLoading" v-show="loading">Loading</div>
+    <div class="PlanetsList" v-else>
       <h3>Planet List</h3>
       <ul class="list" v-for="list in lists" :key="list">
         <li>Name: {{ list.name }}</li>
