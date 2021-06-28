@@ -19,7 +19,7 @@ export default {
   mounted () {
     axios
       .get(`https://swapi.dev/api/planets/?page=${pageNumber}`)
-      .then(response => (this.lists = response.data.results), (this.currentPage))
+      .then(response => (this.lists = response.data.results), (this.pageNumber))
     setTimeout(() => {
       this.isLoading = false
     }, 2000)
