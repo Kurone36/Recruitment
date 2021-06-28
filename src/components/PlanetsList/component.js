@@ -1,27 +1,25 @@
 // @vue/component
 import axios from 'axios'
-import VsPagination from 'vs-pagination'
-
-const pageNumber = 2
+import VSPagination from 'vs-pagination'
+var pageNumber = 3
 
 export default {
   name: 'PlanetsList',
   components: {
-    VsPagination
+    VSPagination
   },
   data () {
     return {
       lists: [],
-      pageNumber: 1,
-      page: 1,
-      isLoading: true
+      currentPage: 3,
+      isLoading: true,
+      pageNumber: 3
     }
   },
   mounted () {
     axios
       .get(`https://swapi.dev/api/planets/?page=${pageNumber}`)
-      .then(response => (this.lists = response.data.results))
-      .then(console.log(this.lists.sort()))
+      .then(response => (this.lists = response.data.results), (this.currentPage))
     setTimeout(() => {
       this.isLoading = false
     }, 2000)
