@@ -18,7 +18,7 @@
                   <button class="pagination-button" @click="pageNumber = index + 1 ">{{index + 1}}</button>
               </span>
               <button class="pagination-button" @click="pageNumber += 1 ">Next</button>
-            </div>
+            </div> 
         </vs-pagination>
       </template>
   </div>
